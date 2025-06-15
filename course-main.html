@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Arab</title>
+    
+</head>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            
+            margin: 0;
+            padding: 0;
+    }
+        #navbar {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            margin: 0;
+            
+            padding: 10px;
+            width: 100%;
+            top: 0;
+            padding-bottom: auto;
+            z-index: 1000;
+        }
+        
+        #navbar li{
+            float:left;
+            list-style-type: none;
+            margin-bottom: 10px;
+            padding: 0; 
+        }
+        #navbar a {
+            font-style: normal;
+            color: black;
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 20px;
+            list-style-type: none;
+            
+            border-radius: 12px;
+            
+        }
+        #navbar a:hover {
+            transition: all 0.3s ease;
+            background-color: #ddd;
+            color: #555;
+        } 
+        #header {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container:hover {
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+        }
+        
+        .card{
+            display: inline-grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: auto;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin: 40px 80px 60px 40px;
+        }
+        .container{
+            margin: 10px;
+            padding: 20px;
+           
+        }
+        .container img{
+            width: 100%;
+        }
+        .enrol {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .enrol:hover {
+            background-color: #45a049;
+            transition: background-color 0.3s ease;
+        }
+</style>
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li id = "current"><a href="course-main.html">Course</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div id="empty">
+        <p></p>
+    </div>
+    <div><h1 id = "header">Courses</h1></div>
+    <div class = "card">
+        
+        <div class = "container">
+            <img src = "https://www.asfourabooks.com/cdn/shop/articles/scaled.jpg?v=1642334188">
+            <h4>Arabic Level 1</h4>
+            <a href = "level1.html" class = "enrol">Enroll</a>
+        </div>
+        
+        <div class = "container">
+            <img src = "https://www.asfourabooks.com/cdn/shop/articles/scaled.jpg?v=1642334188">
+            <h4>Arabic Level 1</h4>
+            <a href = "level1.html" class = "enrol">Enroll</a>
+        </div>
+        <div class = "container">
+            <img src = "https://www.asfourabooks.com/cdn/shop/articles/scaled.jpg?v=1642334188">
+            <h4>Arabic Level 1</h4>
+            <a href = "level1.html" class = "enrol">Enroll</a>
+        </div>
+    </div>
+
+    
+    
+</html>

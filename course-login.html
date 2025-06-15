@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    #signup {
+        background-color: #fff;
+        padding: 20px;
+        margin: 5% auto;
+        border-radius: 14px;
+        width: 30%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #signup h2 {
+        color: #333;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #signup label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    #signup input[type="text"],
+    #signup input[type="email"],
+    #signup input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1.4px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #signup input[type="text"]:focus,
+    #signup input[type="email"]:focus,
+    #signup input[type="password"]:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    #signup button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #signup button:hover {
+        background-color: #45a049;
+    }
+    .error {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+    .success {
+        color: green;
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <div id="signup">
+        <h2>Signup Form</h2>
+        <form id="signup-form">
+            <label for="username">Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id = "message" class = "error"></div>
+           
+            <button type="submit">Sign Up</button>
+        </form>
+        <div id = "success" class = "success"></div>
+    </div>
+    <script src="script-course.js"></script>
+</body>
+</html>

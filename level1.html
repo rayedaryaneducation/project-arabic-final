@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আরবি মাতৃভাষা</title>
+    
+</html>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        #navbar {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 10px;
+            z-index: 1000;
+        }
+        #navbar li {
+            float: left;
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+        #navbar a {
+            color: black;
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 12px;
+        }
+        #navbar a:hover {
+            transition: all 0.3s ease;
+            background-color: #ddd;
+            color: #555;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 60px;
+        }
+        #sidebar {
+            margin-right: 20px;
+            margin-left: 10px;
+            margin-top: 60px;
+            border: 1px solid #ccc;
+            
+            
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #sidebar h2 {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        .lessons {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #333;
+            text-decoration: none;
+            list-style-type: none;
+            
+        }
+        .lessons a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .lessons a:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+        .lessons a.active {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+     
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="home.html">হোম</a></li>
+            <li><a href="course-main.html">কোর্স</a></li>
+            <li><a href="level1.html">লেভেল ১</a></li>
+
+        </ul>
+    </nav>
+  
+
+    <div class="container">
+        <div id = "sidebar">
+            <h2>ক্লাস সমূহ</h2>
+            <ul>
+                <li class = "lessons"><a href = "#" data-video = "https://youtu.be/lzOeyepD0V4?si=fdzmIZoJi0zJpE2e">ক্লাস ১</a></li>
+                <li class = "lessons"><a href = "#" data-video = "https://youtu.be/Lf9qvrwGlBs?si=RDCKkIEYtQZhM3KC">ক্লাস ২</a></li>
+                <li class = "lessons"><a href = "#" data-video = "https://youtu.be/hfCUeMqZoVY?si=NGjjgSPgV4Yd3pEB">ক্লাস ৩</a></li>
+            </ul>
+        </div>
+        <div class = "content">
+            <h2 id ="lesson-title">ক্লাস নম্বর</h2>
+            <iframe id = "video-frame" width="1100" height="619" src="https://www.youtube.com/embed/lzOeyepD0V4?si=x3snznx7Xj9QBvbt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p id="lesson-description">This is a brief description of the lesson content.</p>
+        </div>
+    </div>
+    
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const userData = JSON.parse(localStorage.getItem("userData"));
+        if (!userData) {
+            alert("Please sign up first.");
+            window.location.href = "course-login.html";
+            return;
+        }
+
+        if (!userData.watchedVideos) {
+            userData.watchedVideos = [];
+        }
+
+        const lessonItems = document.querySelectorAll('.lessons a');
+        const videoFrame = document.getElementById('video-frame');
+        const lessonTitle = document.getElementById('lesson-title');
+
+        // Add click listeners
+        lessonItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const videoURL = item.getAttribute('data-video');
+                const titleText = item.innerText;
+
+                videoFrame.src = convertToEmbedURL(videoURL);
+                lessonTitle.innerText = titleText;
+
+                if (!userData.watchedVideos.includes(videoURL)) {
+                    userData.watchedVideos.push(videoURL);
+                    localStorage.setItem("userData", JSON.stringify(userData));
+                }
+
+                updateWatchedStyles();
+            });
+        });
+
+        function updateWatchedStyles() {
+            lessonItems.forEach(item => {
+                const videoURL = item.getAttribute('data-video');
+                if (userData.watchedVideos.includes(videoURL)) {
+                    item.style.textDecoration = "line-through";
+                    item.style.color = "#888";
+                } else {
+                    item.style.textDecoration = "none";
+                    item.style.color = "#333";
+                }
+            });
+        }
+
+        function convertToEmbedURL(youtubeURL) {
+            const match = youtubeURL.match(/(?:https?:\/\/)?(?:www\.)?youtu\.be\/([^\s&?]+)|youtube\.com\/.*[?&]v=([^\s&?]+)/);
+            const videoId = match ? (match[1] || match[2]) : null;
+            return videoId ? `https://www.youtube.com/embed/${videoId}` : "";
+        }
+
+        // No auto-load on page load, user clicks lesson manually
+
+        updateWatchedStyles();
+    });
+</script>
+</body>
+</html>

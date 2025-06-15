@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        আরবি মাতৃভাষা
+    </title>
+    <style>
+        #navbar {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            margin: 0;
+            
+            padding: 10px;
+            width: 100%;
+            top: 0;
+            padding-bottom: auto;
+            z-index: 1000;
+        }
+        
+        #navbar li{
+            float:left;
+            list-style-type: none;
+            margin-bottom: 10px;
+            padding: 0; 
+        }
+        #navbar a {
+            font-style: normal;
+            color: black;
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 20px;
+            list-style-type: none;
+            
+            border-radius: 12px;
+            
+        }
+        #navbar a:hover {
+            transition: all 0.3s ease;
+            background-color: #ddd;
+            color: #555;
+        }
+        body {
+            
+            font-family: Arial, sans-serif;
+            background-color: #ffff
+        }
+        #opening {
+            display: inline-block;
+            width: 100%;
+            height: 100vh;
+            
+            
+            background-image: url('https://img.freepik.com/premium-photo/islamic-background-gray-arabic-muslim-holy-month-ramadan-kareem-mosque-wallpaper-banner_1008660-863.jpg?semt=ais_hybrid&w=740') ;
+            
+            background-size: cover;
+            text-align: center;
+            text-align: center;
+            background-color: antiquewhite;
+            margin-top: 50px;
+        }
+        #opening h1 {
+            color: #333;
+            font-size: 5em;
+            margin-top: 20%;
+            padding: 0;
+        }
+        #opening p {
+            color: #555;
+            font-size: 1.5em;
+            margin-top: -2%;
+            padding: 0;
+        }
+        #quotes {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 50px 30px;
+           
+            border-radius: 10px;
+        }
+        #quote1, #quote2 {
+            font-style: italic;
+            color: #333;
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: block;
+            
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+        }
+        #signup {
+            background-color: #f2f2f2;
+            padding: 20px;
+            overflow: hidden;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            border-radius: 14px;
+            text-align: center;
+            width: 25%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        #signup-form {
+            
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #signup h2 {
+            color: #333;
+            font-size: 2em;
+            
+        }
+        #signup label {
+            display: inline;
+            float:left;
+            font-weight: bold;
+            color: #555;
+}
+
+        #signup input[type="text"],
+        #signup input[type="email"] {
+            
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+
+            width: 95%;
+            margin: 10px 0;
+            
+            padding: 2%;
+            
+            border: 1.4px solid #ccc;
+            border-radius: 5px;
+            
+        }
+        #signup input[type="text"]:focus,
+        #signup input[type="email"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        #signup input[type="text"]:hover,
+        #signup input[type="email"]:hover {
+            border-color: #4CAF50;
+            
+        }
+        #signup input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #sign-in a{
+            margin-top: 20px;
+            color: rgb(7, 60, 167)
+        }
+        .message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+    <body>
+        
+        <div id = "navbar">
+            <ul>
+                <li><a href = "course.html">হোম</a></li>
+                <li><a href = "course-login.html">কোর্স</a></li>
+                <li><a href = "https://www.facebook.com/arian.al.bangali/">যোগাযোগ</a></li>
+            </ul>
+        </div>
+        <div id = "empty">
+            <p></p>
+        </div>
+        <div id = "opening">
+            <h1>আরবী ভাষা শিক্ষায় আপনাকে স্বাগতম</h1>
+            <p>এটি একটি কোর্স যা আপনাকে আরবী ভাষা শিখতে সাহায্য করবে</p>
+        </div>
+        <div id = "quotes">
+            <h2>Quotes</h2>
+            <p id = "quote1">"আরবী ভাষা শিক্ষা করো, কারণ এটি বুদ্ধিমত্তাকে শক্তিশালী করে এবং একজনের নৈতিক আচরণকে বাড়িয়ে তোলে (আল-মুরূ`াহ)।"</p>
+            <p id = "quote2">"নিশ্চয়ই, আমি একে অবতীর্ণ করেছি এক আরবি কোরআন হিসাবে"</p>
+        </div>
+        <div id = "signup">
+            <h2>সাইন আপ</h2>
+            <div id="signup-form-container">
+            
+                <form id = "signup-form">
+                    <label for="name">নাম:</label><br>
+                    <input type="text" id="username" name="name" required><br>
+                    <label for="email">ইমেইল:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    <input type="submit" value="সাইন আপ">
+                </form>
+            </div>
+            <div id = "message" class = "error"></div>
+            <div id = "success" class = "success"></div>
+            <div id = "sign-in">
+                <p>Already have an account? <a href = "course-login.html" id = "sign-in">সাইন ইন</a></p>
+            </div>
+        </div>
+        <script src="script-course.js"></script>
+    </body>
+</html>
